@@ -17,7 +17,7 @@ vpc: # Refer: https://github.com/weaveworks/eksctl/blob/main/examples/04-existin
         id: "subnet-0f2c5429f3f360238"
         az: "us-east-1b"
     private:
-     my-private-garipallybhargava-a:
+      my-private-garipallybhargava-a:
         id: "subnet-051f04383e8a2950f"
         az: "us-east-1a"
       my-private-garipallybhargava-b:
