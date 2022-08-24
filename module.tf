@@ -1,7 +1,7 @@
 module "Capstone_myvpc" {
   source = "terraform-aws-modules/vpc/aws"
 
-  name = "PotureddyHari_Capstone_myvpc"
+  name = "garipallybhargava_Capstone_myvpc"
   cidr = "10.0.0.0/16"
 
   azs             = ["us-east-1a", "us-east-1b"]
@@ -13,6 +13,6 @@ module "Capstone_myvpc" {
 
   tags = {
     Terraform = "true"
-    Environment = "Potureddy_Hari_Charan"
+    Environment = "Garipally_Bhargava"
   }
 }
