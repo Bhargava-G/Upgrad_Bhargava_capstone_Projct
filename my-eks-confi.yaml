@@ -3,25 +3,25 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: my-eks-potureddyhari # name of cluster
+  name: my-eks-GaripallyBhargava # name of cluster
   region: us-east-1
   version: "1.20" # kubernetes version
 vpc: # Refer: https://github.com/weaveworks/eksctl/blob/main/examples/04-existing-vpc.yaml
-  id: "vpc-077e0e374738ba77d"
+  id: "vpc-0f59b25ffb8520cf5"
   subnets:
     public:
-      my-public-potureddyhari-a:
-        id: "subnet-05ebad8aa8a1038a3"
+      my-public-garipallybhargava-a:
+        id: "subnet-0afe23428b4d8f8c0"
         az: "us-east-1a"
-      my-public-potureddyhari-b:
-        id: "subnet-0916882554729319c"
+      my-public-garipallybhargava-b:
+        id: "subnet-0f2c5429f3f360238"
         az: "us-east-1b"
     private:
-      my-private-potureddyhari-a:
-        id: "subnet-02ccbcc3539214f88"
+     my-private-garipallybhargava-a:
+        id: "subnet-051f04383e8a2950f"
         az: "us-east-1a"
-      my-private-potureddyhari-b:
-        id: "subnet-087c2f22130eefc5c"
+      my-private-garipallybhargava-b:
+        id: "subnet-03061fe224562289f"
         az: "us-east-1b"
   clusterEndpoints:
     publicAccess:  true
@@ -65,11 +65,11 @@ iam: # Refer: https://eksctl.io/usage/iamserviceaccounts/
       autoScaler: true
 
 nodeGroups: # Refer: https://github.com/weaveworks/eksctl/blob/main/examples/05-advanced-nodegroups.yaml
-  - name: pvt-potureddyhari-a-1
+  - name: pvt-garipallybhargava-a-1
     labels: { role: workers }
     tags:
       k8s.io/cluster-autoscaler/enabled: "true" # tag is needed for cluster autoscaler. Refer: https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/cloudprovider/aws/README.md#auto-discovery-setup
-      k8s.io/cluster-autoscaler/my-eks-potureddyhari: "shared" # cluster name tag is optional in latest versions of EKS
+      k8s.io/cluster-autoscaler/my-eks-GaripallyBhargava: "shared" # cluster name tag is optional in latest versions of EKS
     instancesDistribution:
       instanceTypes:
         - t2.medium
@@ -78,12 +78,12 @@ nodeGroups: # Refer: https://github.com/weaveworks/eksctl/blob/main/examples/05-
     maxSize: 3
     privateNetworking: true # include only in private subnet
     subnets:
-      - my-private-potureddyhari-a # 1 AZ is enough for testing
-  - name: pub-potureddyhari-a-1
+      - my-private-garipallybhargava-a # 1 AZ is enough for testing
+  - name: pub-garipallybhargava-a-1
     labels: { role: workers }
     tags:
       k8s.io/cluster-autoscaler/enabled: "true"
-      k8s.io/cluster-autoscaler/my-eks-potureddyhari: "shared"
+      k8s.io/cluster-autoscaler/my-eks-GaripallyBhargava: "shared"
     instancesDistribution:
       instanceTypes:
         - t2.medium
@@ -91,12 +91,12 @@ nodeGroups: # Refer: https://github.com/weaveworks/eksctl/blob/main/examples/05-
     minSize: 0
     maxSize: 1
     subnets:
-      - my-public-potureddyhari-a
-  - name: pub-potureddyhari-a-2
+      - my-public-garipallybhargava-a
+  - name: pub-garipallybhargava-a-2
     labels: { role: workers }
     tags:
       k8s.io/cluster-autoscaler/enabled: "true"
-      k8s.io/cluster-autoscaler/my-eks-potureddyhari: "shared"
+      k8s.io/cluster-autoscaler/my-eks-GaripallyBhargava: "shared"
     instancesDistribution:
       instanceTypes:
         - t2.medium
@@ -108,4 +108,4 @@ nodeGroups: # Refer: https://github.com/weaveworks/eksctl/blob/main/examples/05-
     minSize: 1
     maxSize: 5
     subnets:
-      - my-public-potureddyhari-a
+      - my-public-garipallybhargava-a
