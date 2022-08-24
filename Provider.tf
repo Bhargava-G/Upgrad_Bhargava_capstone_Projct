@@ -6,7 +6,7 @@ terraform {
     }
 }
     backend "s3" {
-      bucket = "potureddyhari-capstone-project"
+      bucket = "GaripallyBhargava-capstone-project"
       key    = "root/terraform.tfstate "
       region = "us-east-1"
    }
