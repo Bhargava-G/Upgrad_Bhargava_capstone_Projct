@@ -20,7 +20,7 @@ spec:
       containers:
         - name: upg-loadme
           # update image id (manual or via jenkins)
-          image: '139471262780.dkr.ecr.us-east-1.amazonaws.com/potureddyhari-capstone-project'
+          image: '750158212676.dkr.ecr.us-east-1.amazonaws.com/bhargavagaripally-capstone-project'
           # limiting cpu & mem usage of a pod
           resources:
             requests:
